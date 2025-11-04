@@ -1,8 +1,8 @@
+import './baseconfig.css'
 import '../src/stories/global.scss';
 
 export const parameters = {
   controls: { expanded: true },
-  actions: { argTypesRegex: '^on.*' },
 };
 
 import type { Preview } from '@storybook/nextjs-vite'
@@ -11,7 +11,6 @@ const preview: Preview = {
   parameters: {
     controls: {
       matchers: {
-       color: /(background|color)$/i,
        date: /Date$/i,
       },
     },
