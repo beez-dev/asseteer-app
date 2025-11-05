@@ -1,5 +1,4 @@
-import './baseconfig.css'
-import '../src/stories/global.scss';
+import '../app/globals.css'
 
 export const parameters = {
   controls: { expanded: true },
