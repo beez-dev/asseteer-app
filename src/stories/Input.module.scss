@@ -15,5 +15,6 @@
 }
 
 .errorTxt {
+  @apply text-xs px-2;
   color: $error-600;
 }

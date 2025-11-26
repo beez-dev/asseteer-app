@@ -24,7 +24,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           placeholder={'Enter your text here'}
           {...props}
         />
-        {errorMsg && isError && <div className={styles.errorTxt}>{errorMsg}</div>}
+        {errorMsg && isError && <div className={cn('mt-2', styles.errorTxt)}>{errorMsg}</div>}
       </>
     );
   },
