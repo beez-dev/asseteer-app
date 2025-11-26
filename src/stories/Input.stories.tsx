@@ -23,7 +23,18 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
+  args: {},
+};
+
+export const Error: Story = {
   args: {
-    placeholder: 'Enter text...',
+    isError: true,
+  },
+};
+
+export const ErrorWithMsg: Story = {
+  args: {
+    errorMsg: 'Something is wrong with this input',
+    isError: true,
   },
 };
