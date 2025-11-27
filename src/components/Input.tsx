@@ -3,17 +3,28 @@ import { Input as BaseInput } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
 
 import styles from './Input.module.scss';
+import { ControlProps } from '@jsonforms/core';
+import { Label } from './Label';
+import { withJsonFormsControlProps } from '@jsonforms/react';
 
 export interface InputProps extends React.ComponentProps<'input'> {
   isError?: boolean;
   errorMsg?: string;
+  label?: string;
 }
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, errorMsg, isError, ...props }, ref) => {
+  ({ className, errorMsg, isError, label, id, required, ...props }, ref) => {
     return (
-      <>
+      <div className="flex flex-col">
+        {label && (
+          <Label htmlFor={id} className={'mb-2 font-bold'}>
+            <>{label}</>
+            {required && <>*</>}
+          </Label>
+        )}
         <BaseInput
+          id={id}
           ref={ref}
           className={cn(
             'h-12 focus-visible:ring-0',
@@ -25,9 +36,35 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           {...props}
         />
         {errorMsg && isError && <div className={cn('mt-2', styles.errorTxt)}>{errorMsg}</div>}
-      </>
+      </div>
     );
   },
 );
 
 Input.displayName = 'Input';
+
+const Renderer = (props: ControlProps) => {
+  const {
+    visible,
+    uischema: { label, options },
+    id,
+    errors,
+  } = props;
+
+  if (!visible) return null;
+
+  const inputId = `${id}-input`;
+
+  return (
+    <Input
+      id={inputId}
+      errorMsg={errors}
+      type={options?.inputType}
+      label={label as string}
+      required={options?.required}
+      placeholder={options?.placeholder}
+    />
+  );
+};
+
+export const FormInput = withJsonFormsControlProps(Renderer);

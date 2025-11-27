@@ -3,7 +3,10 @@ import { Button as BaseButton } from '@/components/ui/button';
 import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
+import { withJsonFormsControlProps } from '@jsonforms/react';
+
 import styles from './Button.module.scss';
+import { ControlProps } from '@jsonforms/core';
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
@@ -70,3 +73,17 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 Button.displayName = 'Button';
+
+const Renderer = (props: ControlProps) => {
+  const {
+    uischema: { label = '' },
+  } = props;
+
+  return (
+    <Button>
+      <>{label}</>
+    </Button>
+  );
+};
+
+export const FormButton = withJsonFormsControlProps(Renderer);
