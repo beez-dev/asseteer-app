@@ -1,0 +1,16 @@
+@import "@style/colors";
+
+.button {
+  @apply rounded-sm font-semibold;
+  background: $primary-600;
+  cursor: pointer;
+}
+
+.spinner {
+  @apply inline-block size-4 animate-spin rounded-full border-2 border-solid border-current border-r-transparent;
+}
+
+.button:hover {
+  @apply text-white;
+  background: $primary-500;
+}

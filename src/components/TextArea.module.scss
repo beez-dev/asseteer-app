@@ -1,0 +1,20 @@
+@import "@style/colors";
+
+.textarea {
+  background-color: $primary-gray-700;
+  border: transparent;
+
+  &:focus {
+    outline: 1px solid $primary-600;
+    border: 1px solid $primary-600;
+  }
+}
+
+.error {
+  outline: 1px solid $error-600;
+}
+
+.errorTxt {
+  @apply text-xs px-2;
+  color: $error-600;
+}
