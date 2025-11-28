@@ -1,0 +1,15 @@
+@import "@style/colors";
+
+.switch {
+  @apply h-6 w-11 px-0.5;
+  background: $primary-600;
+
+  [data-slot="switch-thumb"] {
+    @apply h-5 w-5;
+    background: white;
+  }
+
+  &[data-state="unchecked"] {
+    background: $primary-gray-600;
+  }
+}

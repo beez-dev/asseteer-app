@@ -2,6 +2,7 @@ import { Button } from '@/src/presentation/components/Button';
 import { Input } from '@/src/presentation/components/Input';
 import { GradientButton } from '@/src/presentation/components/GradientButton';
 import { Checkbox } from '@/src/presentation/components/Checkbox';
+import { Switch } from '@/src/presentation/components/Switch';
 
 export const schema = {
   type: 'object',
@@ -63,6 +64,16 @@ export const uiSchema = {
           label: 'Primary button',
           options: { id: 'form-checkbox' }, // without Id, checkbox doesn't render in forms
           scope: `#/properties/${Checkbox.displayName!}`,
+        },
+        {
+          type: 'Control',
+          label: 'Primary switch',
+          options: {
+            id: 'form-switch',
+            enabledLabel: 'Enabled',
+            disabledLabel: 'Disabled',
+          },
+          scope: `#/properties/${Switch.displayName!}`,
         },
       ],
     },
