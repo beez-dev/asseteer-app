@@ -1,6 +1,7 @@
 import { Button } from '@/src/components/Button';
 import { Input } from '@/src/components/Input';
 import { GradientButton } from '@/src/components/GradientButton';
+import { Checkbox } from '@/src/components/Checkbox';
 
 export const schema = {
   type: 'object',
@@ -51,6 +52,17 @@ export const uiSchema = {
               scope: `#/properties/${GradientButton.displayName!}`,
             },
           ],
+        },
+      ],
+    },
+    {
+      type: 'HorizontalLayout',
+      elements: [
+        {
+          type: 'Control',
+          label: 'Primary button',
+          options: { id: 'form-checkbox' }, // without Id, checkbox doesn't render in forms
+          scope: `#/properties/${Checkbox.displayName!}`,
         },
       ],
     },

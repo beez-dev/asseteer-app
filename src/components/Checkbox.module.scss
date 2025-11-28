@@ -1,0 +1,9 @@
+@import "@style/colors";
+
+.checkbox {
+  border: 1px solid $primary-gray-600;
+
+  &[data-state="checked"] {
+    background: $blue-600;
+  }
+}
