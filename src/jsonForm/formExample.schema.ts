@@ -1,5 +1,6 @@
 import { Button } from '@/src/components/Button';
 import { Input } from '@/src/components/Input';
+import { GradientButton } from '@/src/components/GradientButton';
 
 export const schema = {
   type: 'object',
@@ -17,6 +18,7 @@ export const uiSchema = {
   elements: [
     {
       type: 'HorizontalLayout',
+
       elements: [
         { type: 'Control', label: 'Primary button', scope: `#/properties/${Button.displayName!}` },
         {
@@ -37,6 +39,16 @@ export const uiSchema = {
               type: 'Control',
               label: 'Ternary Button',
               scope: `#/properties/${Button.displayName!}`,
+            },
+          ],
+        },
+        {
+          type: 'HorizontalLayout',
+          elements: [
+            {
+              type: 'Control',
+              label: 'Gradient Button',
+              scope: `#/properties/${GradientButton.displayName!}`,
             },
           ],
         },

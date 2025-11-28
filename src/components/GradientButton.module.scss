@@ -1,0 +1,12 @@
+@import "@style/colors";
+
+.gradientButton {
+  @apply font-semibold;
+  background: linear-gradient(to right, $primary-600, $pink-600);
+}
+
+.gradientButton:hover {
+  @apply text-white;
+  background: linear-gradient(to right, $primary-700, $pink-700);;
+}
+
