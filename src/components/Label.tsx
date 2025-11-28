@@ -6,7 +6,7 @@ export const Label = React.forwardRef<
   React.ElementRef<typeof BaseLabel>,
   React.ComponentProps<typeof BaseLabel>
 >(({ className, ...props }, ref) => {
-  return <BaseLabel ref={ref} className={cn(className)} {...props} />;
+  return <BaseLabel ref={ref} className={cn('text-white', className)} {...props} />;
 });
 
 Label.displayName = 'Label';

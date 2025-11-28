@@ -7,8 +7,8 @@ import { FormGradientButton, GradientButton } from '@/src/components/GradientBut
 const PRIORITY = 10;
 
 const FormButtonTester = rankWith(PRIORITY, scopeEndsWith(Button.displayName!));
-const FormGradientButtonTester = rankWith(PRIORITY, scopeEndsWith(GradientButton.displayName!));
-const InputTester = rankWith(PRIORITY, scopeEndsWith(Input.displayName!));
+const InputTester = rankWith(PRIORITY + 1, scopeEndsWith(Input.displayName!));
+const FormGradientButtonTester = rankWith(PRIORITY + 2, scopeEndsWith(GradientButton.displayName!));
 
 const Renderers = [
   ...materialRenderers,

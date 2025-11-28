@@ -27,7 +27,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           id={id}
           ref={ref}
           className={cn(
-            'h-12 focus-visible:ring-0',
+            'h-12 focus-visible:ring-0 text-white',
             styles.input,
             { [styles.error]: isError },
             className,
