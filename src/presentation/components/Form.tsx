@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { JsonForms } from '@jsonforms/react';
 import { materialCells } from '@jsonforms/material-renderers';
-import { schema, uiSchema } from '@/src/jsonForm/formExample.schema';
-import Renderers from '@/src/jsonForm/registry';
+import { schema, uiSchema } from '@/src/presentation/jsonForm/formExample.schema';
+import Renderers from '@/src/presentation/jsonForm/registry';
 
 export const FormExample = () => {
   const [data, setData] = useState({});

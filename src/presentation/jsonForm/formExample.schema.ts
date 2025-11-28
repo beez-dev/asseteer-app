@@ -1,7 +1,7 @@
-import { Button } from '@/src/components/Button';
-import { Input } from '@/src/components/Input';
-import { GradientButton } from '@/src/components/GradientButton';
-import { Checkbox } from '@/src/components/Checkbox';
+import { Button } from '@/src/presentation/components/Button';
+import { Input } from '@/src/presentation/components/Input';
+import { GradientButton } from '@/src/presentation/components/GradientButton';
+import { Checkbox } from '@/src/presentation/components/Checkbox';
 
 export const schema = {
   type: 'object',

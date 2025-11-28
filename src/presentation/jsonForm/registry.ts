@@ -1,9 +1,9 @@
 import { rankWith, scopeEndsWith } from '@jsonforms/core';
-import { Button, FormButton } from '@/src/components/Button';
-import { FormInput, Input } from '@/src/components/Input';
+import { Button, FormButton } from '@/src/presentation/components/Button';
+import { FormInput, Input } from '@/src/presentation/components/Input';
 import { materialRenderers } from '@jsonforms/material-renderers';
-import { FormGradientButton, GradientButton } from '@/src/components/GradientButton';
-import { Checkbox, FormCheckbox } from '@/src/components/Checkbox';
+import { FormGradientButton, GradientButton } from '@/src/presentation/components/GradientButton';
+import { Checkbox, FormCheckbox } from '@/src/presentation/components/Checkbox';
 
 const PRIORITY = 10;
 
