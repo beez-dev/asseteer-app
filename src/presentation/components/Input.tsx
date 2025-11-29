@@ -46,6 +46,9 @@ Input.displayName = 'Input';
 const Renderer = (props: ControlProps) => {
   const {
     visible,
+    data,
+    handleChange,
+    path,
     uischema: { label, options },
     id,
     errors,
@@ -58,6 +61,8 @@ const Renderer = (props: ControlProps) => {
   return (
     <Input
       id={inputId}
+      value={data || ''}
+      onChange={(e) => handleChange(path, e.target.value)}
       errorMsg={errors}
       type={options?.inputType}
       label={label as string}

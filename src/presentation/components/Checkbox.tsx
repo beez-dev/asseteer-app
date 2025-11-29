@@ -35,12 +35,22 @@ Checkbox.displayName = 'Checkbox';
 
 const Renderer = (props: ControlProps) => {
   const {
+    data,
+    handleChange,
+    path,
     uischema: { label = '', options },
   } = props;
 
   if (!options?.id) return null;
 
-  return <Checkbox id={options.id} label={label as string} />;
+  return (
+    <Checkbox
+      id={options.id}
+      label={label as string}
+      checked={data || false}
+      onCheckedChange={(checked) => handleChange(path, checked)}
+    />
+  );
 };
 
 export const FormCheckbox = withJsonFormsControlProps(Renderer);

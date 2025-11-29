@@ -47,6 +47,9 @@ Switch.displayName = 'Switch';
 
 const Renderer = (props: ControlProps) => {
   const {
+    data,
+    handleChange,
+    path,
     uischema: { options },
   } = props;
 
@@ -55,6 +58,8 @@ const Renderer = (props: ControlProps) => {
   return (
     <Switch
       id={options.id}
+      checked={data || false}
+      onCheckedChange={(checked) => handleChange(path, checked)}
       enabledLabel={options?.enabledLabel as string}
       disabledLabel={options?.disabledLabel as string}
       disabled={options?.disabled}
