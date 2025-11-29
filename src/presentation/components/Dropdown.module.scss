@@ -1,0 +1,36 @@
+@import "@style/colors";
+
+.dropdown {
+  @apply h-12 text-xs font-semibold pl-4;
+  background-color: $primary-gray-700;
+  border: 1px solid $primary-gray-600;
+  outline: 1px solid $primary-gray-600;
+  color: white;
+
+  &:focus {
+    outline: 1px solid $primary-600;
+    border: 1px solid $primary-600;
+  }
+
+  &:hover {
+    @apply cursor-pointer;
+    background-color: $primary-gray-700;
+  }
+}
+
+.popover {
+  @apply text-xs font-semibold;
+  background-color: $primary-gray-700;
+  border: 1px solid $primary-gray-600;
+  outline: 1px solid $primary-gray-600;
+}
+
+.popoverItem {
+  @apply text-xs font-semibold text-white cursor-pointer scale-x-[1.1] px-4;
+  background-color: $primary-gray-700;
+
+  &:hover {
+    background-color: $primary-gray-800;
+  }
+}
+

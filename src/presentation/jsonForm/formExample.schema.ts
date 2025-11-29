@@ -3,6 +3,7 @@ import { Input } from '@/src/presentation/components/Input';
 import { GradientButton } from '@/src/presentation/components/GradientButton';
 import { Checkbox } from '@/src/presentation/components/Checkbox';
 import { Switch } from '@/src/presentation/components/Switch';
+import { Dropdown } from '@/src/presentation/components/Dropdown';
 
 export const schema = {
   type: 'object',
@@ -74,6 +75,28 @@ export const uiSchema = {
             disabledLabel: 'Disabled',
           },
           scope: `#/properties/${Switch.displayName!}`,
+        },
+        {
+          type: 'Control',
+          label: 'Dropdown menu',
+          options: {
+            id: 'dropdown',
+            dropdownOptions: [
+              {
+                label: 'option A',
+                value: 'option A value',
+              },
+              {
+                label: 'option B',
+                value: 'option B value',
+              },
+              {
+                label: 'option C',
+                value: 'option C value',
+              },
+            ],
+          },
+          scope: `#/properties/${Dropdown.displayName!}`,
         },
       ],
     },

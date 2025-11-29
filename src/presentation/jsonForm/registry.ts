@@ -5,6 +5,7 @@ import { materialRenderers } from '@jsonforms/material-renderers';
 import { FormGradientButton, GradientButton } from '@/src/presentation/components/GradientButton';
 import { Checkbox, FormCheckbox } from '@/src/presentation/components/Checkbox';
 import { Switch, FormSwitch } from '@/src/presentation/components/Switch';
+import { FormDropdown, Dropdown } from '@/src/presentation/components/Dropdown';
 
 const PRIORITY = 10;
 
@@ -13,6 +14,7 @@ const InputTester = rankWith(PRIORITY + 1, scopeEndsWith(Input.displayName!));
 const FormGradientButtonTester = rankWith(PRIORITY + 2, scopeEndsWith(GradientButton.displayName!));
 const FormCheckboxTester = rankWith(PRIORITY + 3, scopeEndsWith(Checkbox.displayName!));
 const FormSwitchTester = rankWith(PRIORITY + 4, scopeEndsWith(Switch.displayName!));
+const FormDropdownTester = rankWith(PRIORITY + 5, scopeEndsWith(Dropdown.displayName!));
 
 const Renderers = [
   ...materialRenderers,
@@ -22,6 +24,7 @@ const Renderers = [
   { tester: FormGradientButtonTester, renderer: FormGradientButton },
   { tester: FormCheckboxTester, renderer: FormCheckbox },
   { tester: FormSwitchTester, renderer: FormSwitch },
+  { tester: FormDropdownTester, renderer: FormDropdown },
 ];
 
 export default Renderers;
