@@ -1,0 +1,16 @@
+@import "@style/colors";
+
+.socialButton {
+  @apply rounded-sm font-semibold text-black;
+  background: $primary-gray-100;
+  cursor: pointer;
+}
+
+.socialButton:hover {
+  @apply text-black;
+  background: $primary-gray-300;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}

@@ -6,6 +6,7 @@ import { FormGradientButton, GradientButton } from '@/src/presentation/component
 import { Checkbox, FormCheckbox } from '@/src/presentation/components/Checkbox';
 import { Switch, FormSwitch } from '@/src/presentation/components/Switch';
 import { FormDropdown, Dropdown } from '@/src/presentation/components/Dropdown';
+import { SocialButton, FormSocialButton } from '@/src/presentation/components/SocialButton';
 
 const PRIORITY = 10;
 
@@ -15,6 +16,7 @@ const FormGradientButtonTester = rankWith(PRIORITY + 2, scopeEndsWith(GradientBu
 const FormCheckboxTester = rankWith(PRIORITY + 3, scopeEndsWith(Checkbox.displayName!));
 const FormSwitchTester = rankWith(PRIORITY + 4, scopeEndsWith(Switch.displayName!));
 const FormDropdownTester = rankWith(PRIORITY + 5, scopeEndsWith(Dropdown.displayName!));
+const FormSocialButtonTester = rankWith(PRIORITY + 6, scopeEndsWith(SocialButton.displayName!));
 
 const Renderers = [
   ...materialRenderers,
@@ -25,6 +27,7 @@ const Renderers = [
   { tester: FormCheckboxTester, renderer: FormCheckbox },
   { tester: FormSwitchTester, renderer: FormSwitch },
   { tester: FormDropdownTester, renderer: FormDropdown },
+  { tester: FormSocialButtonTester, renderer: FormSocialButton },
 ];
 
 export default Renderers;

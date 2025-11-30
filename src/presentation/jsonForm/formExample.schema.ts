@@ -4,6 +4,7 @@ import { GradientButton } from '@/src/presentation/components/GradientButton';
 import { Checkbox } from '@/src/presentation/components/Checkbox';
 import { Switch } from '@/src/presentation/components/Switch';
 import { Dropdown } from '@/src/presentation/components/Dropdown';
+import { SocialButton } from '@/src/presentation/components/SocialButton';
 
 export const schema = {
   type: 'object',
@@ -97,6 +98,11 @@ export const uiSchema = {
             ],
           },
           scope: `#/properties/${Dropdown.displayName!}`,
+        },
+        {
+          type: 'Control',
+          label: 'Social Button',
+          scope: `#/properties/${SocialButton.displayName!}`,
         },
       ],
     },

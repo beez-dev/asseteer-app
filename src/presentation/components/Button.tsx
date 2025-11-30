@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { Button as BaseButton } from '@/components/ui/button';
-import { cva, VariantProps } from 'class-variance-authority';
-import { cn } from '@/lib/utils';
-
 import { withJsonFormsControlProps } from '@jsonforms/react';
+import { cva, VariantProps } from 'class-variance-authority';
+import { ControlProps } from '@jsonforms/core';
+
+import { Button as BaseButton } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { IconType } from '@/src/common/types';
 
 import styles from './Button.module.scss';
-import { ControlProps } from '@jsonforms/core';
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
@@ -43,16 +44,18 @@ export interface ButtonProps
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
   isLoading?: boolean;
+  Icon?: IconType;
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild, isLoading, children, disabled, ...props }, ref) => {
+  ({ className, variant, size, asChild, isLoading, children, disabled, Icon, ...props }, ref) => {
     return (
       <BaseButton
         ref={ref}
         className={cn(styles.button, buttonVariants({ variant, size, className }), {
           '!cursor-not-allowed': isLoading || disabled,
         })}
+        type="button"
         variant={variant}
         size={size}
         asChild={asChild}
@@ -60,12 +63,16 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         {isLoading ? (
-          <>
+          <div className="flex flex-row gap-x-2 items-center">
             <span className={styles.spinner}></span>
+            {Icon && <Icon />}
             {children}
-          </>
+          </div>
         ) : (
-          children
+          <div className="flex flex-row gap-x-2 items-center">
+            {Icon && <Icon />}
+            {children}
+          </div>
         )}
       </BaseButton>
     );

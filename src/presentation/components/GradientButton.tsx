@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button as BaseButton } from '@/components/ui/button';
+import { Button as BaseButton } from './Button';
 import { cva, VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 

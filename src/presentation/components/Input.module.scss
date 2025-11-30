@@ -2,6 +2,8 @@
 
 .input {
   background-color: $primary-gray-700;
+  outline: 1px solid $primary-gray-600;
+  border: 1px solid $primary-gray-600;
   border: transparent;
 
   &:focus {
