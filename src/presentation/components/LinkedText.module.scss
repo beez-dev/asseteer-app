@@ -1,0 +1,12 @@
+@import "@style/colors";
+
+.linkedText {
+  @apply text-xs;
+  color: $primary-600;
+}
+
+.icon {
+  fill: $primary-600;
+  padding: 0;
+  margin: 0;
+}
