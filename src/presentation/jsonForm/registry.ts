@@ -7,6 +7,7 @@ import { Checkbox, FormCheckbox } from '@/src/presentation/components/Checkbox';
 import { Switch, FormSwitch } from '@/src/presentation/components/Switch';
 import { FormDropdown, Dropdown } from '@/src/presentation/components/Dropdown';
 import { SocialButton, FormSocialButton } from '@/src/presentation/components/SocialButton';
+import { PasswordInput, FormPasswordInput } from '@/src/presentation/components/PasswordInput';
 
 const PRIORITY = 10;
 
@@ -17,6 +18,7 @@ const FormCheckboxTester = rankWith(PRIORITY + 3, scopeEndsWith(Checkbox.display
 const FormSwitchTester = rankWith(PRIORITY + 4, scopeEndsWith(Switch.displayName!));
 const FormDropdownTester = rankWith(PRIORITY + 5, scopeEndsWith(Dropdown.displayName!));
 const FormSocialButtonTester = rankWith(PRIORITY + 6, scopeEndsWith(SocialButton.displayName!));
+const FormPasswordInputTester = rankWith(PRIORITY + 7, scopeEndsWith(PasswordInput.displayName!));
 
 const Renderers = [
   ...materialRenderers,
@@ -28,6 +30,7 @@ const Renderers = [
   { tester: FormSwitchTester, renderer: FormSwitch },
   { tester: FormDropdownTester, renderer: FormDropdown },
   { tester: FormSocialButtonTester, renderer: FormSocialButton },
+  { tester: FormPasswordInputTester, renderer: FormPasswordInput },
 ];
 
 export default Renderers;

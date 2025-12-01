@@ -6,6 +6,7 @@ import styles from './Input.module.scss';
 import { ControlProps } from '@jsonforms/core';
 import { Label } from './Label';
 import { withJsonFormsControlProps } from '@jsonforms/react';
+import { Error } from '@/src/presentation/components/Error';
 
 export interface InputProps extends React.ComponentProps<'input'> {
   isError?: boolean;
@@ -35,7 +36,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           placeholder={'Enter your text here'}
           {...props}
         />
-        {errorMsg && isError && <div className={cn('mt-2', styles.errorTxt)}>{errorMsg}</div>}
+        {isError && <Error message={errorMsg} />}
       </div>
     );
   },
