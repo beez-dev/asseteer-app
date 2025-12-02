@@ -13,7 +13,7 @@ export interface LinkedTextProps {
 }
 
 export const LinkedText = React.forwardRef<HTMLDivElement, LinkedTextProps>(
-  ({ text, path, className, Icon }, ref) => {
+  ({ text = '', path = '', className, Icon }, ref) => {
     return (
       <Link href={path} className="flex flex-row items-center justify-center gap-x-2">
         {Icon && <Icon size={12} className={styles.icon} />}
