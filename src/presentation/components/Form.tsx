@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { JsonForms } from '@jsonforms/react';
 import { materialCells } from '@jsonforms/material-renderers';
-import { schema, uiSchema } from '@/src/presentation/jsonForm/formExample.schema';
-import Renderers from '@/src/presentation/jsonForm/registry';
+import { schema, uiSchema } from '@/src/presentation/jsonForm/schemas/formExample.schema';
+import { FormComponentRenderers } from '@/src/presentation/jsonForm/registry';
 import { Button } from './Button';
 
 export const FormExample = () => {
@@ -20,7 +20,7 @@ export const FormExample = () => {
           schema={schema}
           uischema={uiSchema}
           data={data}
-          renderers={Renderers}
+          renderers={FormComponentRenderers}
           cells={materialCells}
           onChange={({ data }) => setData(data)}
         />
