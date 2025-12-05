@@ -1,0 +1,6 @@
+@import "@style/colors";
+
+.dialogue {
+  @apply rounded-2xl min-w-[448px] p-10;
+  background: $primary-gray-800;
+}

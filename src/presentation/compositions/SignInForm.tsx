@@ -8,6 +8,7 @@ import { GradientButton } from '@/src/presentation/components/GradientButton';
 import { DialogTitle } from '@/src/presentation/components/DialogueTitle';
 import { Separator } from '@/src/presentation/components/Separator';
 import { SocialButton } from '@/src/presentation/components/SocialButton';
+import { DialogueContainer } from '@/src/presentation/containers/Dialogue';
 
 export const SignInForm = () => {
   const [data, setData] = useState({});
@@ -18,23 +19,25 @@ export const SignInForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col">
-      <DialogTitle title="Welcome Back" subTitle="Sign in to your artist hub" className="mb-8" />
-      <JsonForms
-        schema={schema}
-        uischema={uiSchema}
-        data={data}
-        renderers={FormLayoutRenderers}
-        cells={materialCells}
-        onChange={({ data }) => setData(data)}
-      />
-      <div className="flex flex-col gap-y-2">
-        <GradientButton type="submit" className="mt-2">
-          Submit
-        </GradientButton>
-        <Separator text="Or continue with google" />
-        <SocialButton className="mt-2">Sign in with Google</SocialButton>
-      </div>
-    </form>
+    <DialogueContainer>
+      <form onSubmit={handleSubmit} className="flex flex-col">
+        <DialogTitle title="Welcome Back" subTitle="Sign in to your artist hub" className="mb-8" />
+        <JsonForms
+          schema={schema}
+          uischema={uiSchema}
+          data={data}
+          renderers={FormLayoutRenderers}
+          cells={materialCells}
+          onChange={({ data }) => setData(data)}
+        />
+        <div className="flex flex-col gap-y-6">
+          <GradientButton type="submit" className="mt-2">
+            Submit
+          </GradientButton>
+          <Separator text="Or continue with google" />
+          <SocialButton>Sign in with Google</SocialButton>
+        </div>
+      </form>
+    </DialogueContainer>
   );
 };
